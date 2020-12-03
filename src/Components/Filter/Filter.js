@@ -33,6 +33,8 @@ const Filter = ({ setSearch, setCountries }) => {
 			<div className='filter__box'>
 				<SearchIcon />
 				<input
+					title = "Search countries"
+					aria-label = "input"
 					name='search'
 					onChange={(e) => setSearch(e.target.value)}
 					className='filter__input'
