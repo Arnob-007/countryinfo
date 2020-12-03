@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Header from "./Components/Header/Header";
+import Country from "./Pages/Country/Country";
+import Home from "./Pages/Home/Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [countries, setCountries] = useState([]);
+	const [selectedCountry, setSelectedCountry] = useState();
+
+	useEffect(() => {
+		fetch("https://restcountries.eu/rest/v2/all")
+			.then((data) => data.json())
+			.then((info) => {
+				for (let i = info.length - 1; i > 0; i--) {
+					let j = Math.floor(Math.random() * (i + 1));
+					let temp = info[i];
+					info[i] = info[j];
+					info[j] = temp;
+				}
+				setCountries(info);
+			})
+			.catch((err) => console.log(err));
+	}, []);
+
+	return (
+		<div id='app' className='app dark'>
+			<Header />
+			{!selectedCountry ? (
+				<Home
+					countries={countries}
+					setCountries={setCountries}
+					setSelectedCountry={setSelectedCountry}
+				/>
+			) : (
+				<Country
+					country={selectedCountry}
+					setSelectedCountry={setSelectedCountry}
+				/>
+			)}
+		</div>
+	);
+};
 
 export default App;

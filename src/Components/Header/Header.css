@@ -1,0 +1,23 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: background var(--bgtime) ease, color var(--clrtime) ease;
+	color: var(--text);
+	background: var(--bg-sec);
+	padding: max(1%, 10px) 5%;
+	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.header__dark {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+	.header {
+		font-size: 0.8rem;
+	}
+}

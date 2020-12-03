@@ -1,0 +1,50 @@
+.filter {
+	display: flex;
+	justify-content: space-between;
+	margin: 2% 8% 2% 5%;
+}
+
+.filter__box {
+	display: flex;
+	align-items: center;
+	flex: 0.4;
+	padding: 8px 0 8px 10px;
+	transition: background var(--bgtime) ease, color var(--clrtime) ease;
+	background: var(--bg-sec);
+	border-radius: 5px;
+}
+
+.filter__input {
+	transition: background var(--bgtime) ease, color var(--clrtime) ease;
+	color: var(--text);
+	background: var(--bg-sec);
+	border: none;
+	outline: none;
+	padding: 0.5rem;
+	margin-left: 1rem;
+	flex: 1;
+}
+
+.filter__select {
+	transition: background var(--bgtime) ease, color var(--clrtime) ease;
+	background: var(--bg-sec);
+	color: var(--text);
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+	.filter {
+		margin-top: 3%;
+		flex-direction: column;
+	}
+	.filter__box {
+		width: 100%;
+	}
+	.filter__select {
+		margin: 5% 0;
+		width: fit-content;
+		align-self: flex-end;
+	}
+}

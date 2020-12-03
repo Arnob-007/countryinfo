@@ -1,0 +1,40 @@
+.home {
+	display: flex;
+	flex-direction: column;
+}
+
+.home__countries {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	margin: 0 2.5%;
+	justify-content: center;
+	transition: background var(--bgtime) ease, color var(--clrtime) ease;
+}
+
+.home__footer {
+	display: flex;
+	width: 100%;
+	margin: 5% 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.home__btn {
+	transition: background var(--bgtime) ease, color var(--clrtime) ease,
+		box-shadow 100ms ease;
+	display: flex;
+	align-items: center;
+	color: var(--text);
+	background: var(--bg-sec);
+	margin: 0 2%;
+	padding: 0.5% 5%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home__btn:hover {
+	box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5);
+}
