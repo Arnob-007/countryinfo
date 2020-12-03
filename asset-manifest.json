@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/countryinfo/static/css/main.ae01560b.chunk.css",
-    "main.js": "/countryinfo/static/js/main.ac4ea420.chunk.js",
-    "main.js.map": "/countryinfo/static/js/main.ac4ea420.chunk.js.map",
+    "main.js": "/countryinfo/static/js/main.d61578aa.chunk.js",
+    "main.js.map": "/countryinfo/static/js/main.d61578aa.chunk.js.map",
     "runtime-main.js": "/countryinfo/static/js/runtime-main.a0e3d024.js",
     "runtime-main.js.map": "/countryinfo/static/js/runtime-main.a0e3d024.js.map",
     "static/js/2.cb7e6613.chunk.js": "/countryinfo/static/js/2.cb7e6613.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a0e3d024.js",
     "static/js/2.cb7e6613.chunk.js",
     "static/css/main.ae01560b.chunk.css",
-    "static/js/main.ac4ea420.chunk.js"
+    "static/js/main.d61578aa.chunk.js"
   ]
 }
