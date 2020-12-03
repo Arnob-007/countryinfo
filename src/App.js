@@ -24,7 +24,7 @@ const App = () => {
 	}, []);
 
 	return (
-		<div id='app' className='app dark'>
+		<div id='app' className='app light'>
 			<Header />
 			{!selectedCountry ? (
 				<Home

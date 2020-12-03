@@ -30,15 +30,17 @@ const Filter = ({ setSearch, setCountries }) => {
 
 	return (
 		<div className='filter'>
-			<form onSubmit={(e) => e.preventDefault()} className='filter__box'>
+			<div className='filter__box'>
 				<SearchIcon />
 				<input
+					name='search'
 					onChange={(e) => setSearch(e.target.value)}
 					className='filter__input'
 					placeholder='Search for a country...'
 				/>
-			</form>
+			</div>
 			<select
+				title='Filter by Region'
 				className='filter__select'
 				onChange={regionChange}
 				name='Filter by Region'

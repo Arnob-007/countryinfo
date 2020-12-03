@@ -3,7 +3,7 @@ import NightsStayOutlinedIcon from "@material-ui/icons/NightsStayOutlined";
 import { useEffect, useState } from "react";
 
 const Header = () => {
-	const [dark, setDark] = useState(true);
+	const [dark, setDark] = useState(false);
 
 	useEffect(() => {
 		const theme = localStorage.getItem("Theme");
