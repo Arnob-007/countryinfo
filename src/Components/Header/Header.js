@@ -1,26 +1,32 @@
 import "./Header.css";
 import NightsStayOutlinedIcon from "@material-ui/icons/NightsStayOutlined";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 	const [dark, setDark] = useState(true);
 
-	const handleTheme = () => {
+	useEffect(() => {
+		const theme = localStorage.getItem("Theme");
+
+		if (theme) theme === "dark" ? setDark(true) : setDark(false);
+	}, []);
+
+	useEffect(() => {
 		const elm = document.getElementById("app");
 
-		if (dark) {
+		if (!dark) {
 			elm.classList.replace("dark", "light");
-			setDark(false);
+			localStorage.setItem("Theme", "light");
 		} else {
 			elm.classList.replace("light", "dark");
-			setDark(true);
+			localStorage.setItem("Theme", "dark");
 		}
-	};
+	}, [dark]);
 
 	return (
 		<div className='header'>
 			<h2>Where in the world?</h2>
-			<div onClick={handleTheme} className='header__dark'>
+			<div onClick={() => setDark(!dark)} className='header__dark'>
 				<NightsStayOutlinedIcon />
 				{dark ? "Light" : "Dark"} Mode
 			</div>
